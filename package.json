@@ -1,0 +1,5 @@
+{
+	"dependencies": {
+		"antlr4": "^4.11.0"
+	}
+}
