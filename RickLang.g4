@@ -57,7 +57,7 @@ sumop: '+' | '-';
 mulExp: mulExp mulop unaryExp | unaryExp;
 mulop: '*' | '/';
 unaryExp: unaryop unaryExp | factor;
-unaryop: '-' | '*' | '?';
+unaryop: '-' | '!' | '++' | '--';
 factor: mutable | immutable;
 mutable: ID | ID '[' exp ']' | ID ('.' ID)*;
 immutable: call | const | array | object | '(' exp ')';
