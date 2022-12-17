@@ -19,7 +19,8 @@ stmt: expStmt
     | tryStmt
     | importStmt
     | breakStmt
-    | continueStmt;
+    | continueStmt
+    | printStmt;
 expStmt: exp;
 compoundStmt: '{' stmtList '}';
 stmtList: stmtList stmt | stmt;
@@ -30,6 +31,7 @@ tryStmt: TRY stmt CATCH ID THEN stmt END;
 importStmt: IMPORTOP ID IMPORTCL;
 breakStmt: BREAK;
 continueStmt: CONTINUE;
+printStmt: PRINTOP exp;
 
 exp: mutable ASSIGN exp
    | mutable '+=' exp
@@ -98,3 +100,4 @@ IMPORTOP: 'weknowthe';
 IMPORTCL: 'andwe\'regonnaplayit';
 BREAK: 'desertu';
 CONTINUE: 'runaround';
+PRINT: 'ijustwannatelluhowimfeeling';
