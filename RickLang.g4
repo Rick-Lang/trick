@@ -45,15 +45,13 @@ exp: mutable ASSIGN exp
 simpleExp: simpleExp 'or' andExp | andExp;
 andExp: andExp 'and' unaryRelExp | unaryRelExp;
 unaryRelExp: 'not' unaryRelExp | relExp;
-relExp: minmaxExp relop minmaxExp | minmaxExp;
+relExp: sumExp relop sumExp | sumExp;
 relop: 'islessthan'
      | 'islessthanorequalto'
      | 'isgreaterthan'
      | 'isgreaterthanorequalto'
      | 'is'
      | 'aint';
-minmaxExp: minmaxExp minmaxop sumExp | sumExp;
-minmaxop: ':>:' | ':<:';
 sumExp: sumExp sumop mulExp | mulExp;
 sumop: '+' | '-';
 mulExp: mulExp mulop unaryExp | unaryExp;
