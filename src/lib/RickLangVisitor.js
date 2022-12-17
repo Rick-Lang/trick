@@ -18,6 +18,12 @@ export default class RickLangVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by RickLangParser#stmtList.
+	visitStmtList(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by RickLangParser#importStmt.
 	visitImportStmt(ctx) {
 	  return this.visitChildren(ctx);
@@ -90,50 +96,8 @@ export default class RickLangVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
-	// Visit a parse tree produced by RickLangParser#AssignExpr.
-	visitAssignExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#AddAssignExpr.
-	visitAddAssignExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#SubAssignExpr.
-	visitSubAssignExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#MulAssignExpr.
-	visitMulAssignExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#DivAssignExpr.
-	visitDivAssignExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#IncExpr.
-	visitIncExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#DecExpr.
-	visitDecExpr(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by RickLangParser#SimpleExpr_.
-	visitSimpleExpr_(ctx) {
+	// Visit a parse tree produced by RickLangParser#expr.
+	visitExpr(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

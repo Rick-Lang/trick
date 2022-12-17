@@ -1,10 +1,6 @@
 grammar RickLang;
 import RLTokens;
 
-@header {
-    package src.lib;
-}
-
 program: (statement)*;
 
 statement
@@ -22,32 +18,34 @@ statement
         | varStmt
         ;
 
+stmtList: (statement)*;
+
 importStmt
-        : IMPORTOP STRINGCONST IMPORTCL 'as' ID
+        : IMPORTOP fName=STRINGCONST IMPORTCL 'as' fAlias=ID
         ;
 
 funStmt
-        : FUN ID LPAREN (exprList)? RPAREN LBRACE (statement)* RBRACE
+        : FUN funName=ID LPAREN funParams=exprList? RPAREN LBRACE funBlock=stmtList RBRACE
         ;
 
 varStmt
-        : LET ID (ASSIGN expr)?
+        : LET varName=ID (ASSIGN varVal=expr)?
         ;
 
 ifStmt
-        : IF expr THEN LBRACE (statement)* RBRACE (ELSE LBRACE (statement)* RBRACE)?
+        : IF ifCondition=expr THEN LBRACE ifBlock=stmtList RBRACE (ELSE LBRACE elseBlock=stmtList RBRACE)?
         ;
 
 whileStmt
-        : WHILE expr LBRACE (statement)* RBRACE
+        : WHILE whileCondition=expr LBRACE whileBlock=stmtList RBRACE
         ;
 
 tryStmt
-        : TRY LBRACE (statement)* RBRACE
+        : TRY LBRACE tryBlock=stmtList RBRACE
         ;
 
 catchStmt
-        : CATCH ID LBRACE (statement)* RBRACE
+        : CATCH errName=ID LBRACE catchBlock=stmtList RBRACE
         ;
 
 breakStmt
@@ -59,11 +57,11 @@ continueStmt
         ;
 
 printStmt
-        : PRINT expr
+        : PRINT printVal=expr
         ;
 
 returnStmt
-        : RETURNOP expr RETURNCL
+        : RETURNOP returnVal=expr RETURNCL
         ;
 
 exprStmt
@@ -71,14 +69,14 @@ exprStmt
         ;
 
 expr
-    : left=mutable op=ASSIGN right=expr # AssignExpr
-    | left=mutable op='+='   right=expr # AddAssignExpr
-    | left=mutable op='-='   right=expr # SubAssignExpr
-    | left=mutable op='*='   right=expr # MulAssignExpr
-    | left=mutable op='/='   right=expr # DivAssignExpr
-    | left=mutable op='++'              # IncExpr
-    | left=mutable op='--'              # DecExpr
-    | simpleExpr                        # SimpleExpr_
+    : left=mutable op=ASSIGN right=expr
+    | left=mutable op='+='   right=expr
+    | left=mutable op='-='   right=expr
+    | left=mutable op='*='   right=expr
+    | left=mutable op='/='   right=expr
+    | left=mutable op='++'
+    | left=mutable op='--'
+    | simpleExpr
     ;
 
 exprList

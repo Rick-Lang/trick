@@ -23,6 +23,15 @@ export default class RickLangListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by RickLangParser#stmtList.
+	enterStmtList(ctx) {
+	}
+
+	// Exit a parse tree produced by RickLangParser#stmtList.
+	exitStmtList(ctx) {
+	}
+
+
 	// Enter a parse tree produced by RickLangParser#importStmt.
 	enterImportStmt(ctx) {
 	}
@@ -131,75 +140,12 @@ export default class RickLangListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by RickLangParser#AssignExpr.
-	enterAssignExpr(ctx) {
+	// Enter a parse tree produced by RickLangParser#expr.
+	enterExpr(ctx) {
 	}
 
-	// Exit a parse tree produced by RickLangParser#AssignExpr.
-	exitAssignExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#AddAssignExpr.
-	enterAddAssignExpr(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#AddAssignExpr.
-	exitAddAssignExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#SubAssignExpr.
-	enterSubAssignExpr(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#SubAssignExpr.
-	exitSubAssignExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#MulAssignExpr.
-	enterMulAssignExpr(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#MulAssignExpr.
-	exitMulAssignExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#DivAssignExpr.
-	enterDivAssignExpr(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#DivAssignExpr.
-	exitDivAssignExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#IncExpr.
-	enterIncExpr(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#IncExpr.
-	exitIncExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#DecExpr.
-	enterDecExpr(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#DecExpr.
-	exitDecExpr(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#SimpleExpr_.
-	enterSimpleExpr_(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#SimpleExpr_.
-	exitSimpleExpr_(ctx) {
+	// Exit a parse tree produced by RickLangParser#expr.
+	exitExpr(ctx) {
 	}
 
 
