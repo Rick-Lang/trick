@@ -51,7 +51,7 @@ COMMA: ',';
 QUOTES: '"' | '\'';
 
 ID: [a-zA-Z_][a-zA-Z0-9_]*;
-NUMCONST: [0-9]+;
+NUMCONST: [0-9]+ ('.' [0-9]+)?;
 STRINGCONST: '"' .*? '"' | '\'' .*? '\'';
 
 program: (statement)*;
