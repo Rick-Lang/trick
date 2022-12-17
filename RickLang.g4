@@ -31,7 +31,7 @@ tryStmt: TRY stmt CATCH ID THEN stmt END;
 importStmt: IMPORTOP ID IMPORTCL;
 breakStmt: BREAK;
 continueStmt: CONTINUE;
-printStmt: PRINTOP exp;
+printStmt: PRINT exp;
 
 exp: mutable ASSIGN exp
    | mutable '+=' exp

@@ -185,6 +185,15 @@ export default class RickLangListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by RickLangParser#printStmt.
+	enterPrintStmt(ctx) {
+	}
+
+	// Exit a parse tree produced by RickLangParser#printStmt.
+	exitPrintStmt(ctx) {
+	}
+
+
 	// Enter a parse tree produced by RickLangParser#exp.
 	enterExp(ctx) {
 	}
@@ -236,24 +245,6 @@ export default class RickLangListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by RickLangParser#relop.
 	exitRelop(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#minmaxExp.
-	enterMinmaxExp(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#minmaxExp.
-	exitMinmaxExp(ctx) {
-	}
-
-
-	// Enter a parse tree produced by RickLangParser#minmaxop.
-	enterMinmaxop(ctx) {
-	}
-
-	// Exit a parse tree produced by RickLangParser#minmaxop.
-	exitMinmaxop(ctx) {
 	}
 
 
