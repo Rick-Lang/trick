@@ -1,0 +1,24 @@
+gonna fizzBuzz (num) {
+    andifuaskmehowimfeeling num % 15 is 0 then {
+        ijustwannatelluhowimfeeling "FizzBuzz\n"
+        whenigivemy 0 itwillbecompletely
+    }
+
+    andifuaskmehowimfeeling num % 3 is 0 then {
+        ijustwannatelluhowimfeeling "Fizz\n"
+        whenigivemy 0 itwillbecompletely
+    }
+
+    andifuaskmehowimfeeling num % 5 is 0 then {
+        ijustwannatelluhowimfeeling "Buzz\n"
+        whenigivemy 0 itwillbecompletely
+    }
+
+    ijustwannatelluhowimfeeling String(num) + "\n"
+}
+
+give index up 0
+togetherforeverwith index lessthan 30 {
+    give index up index++
+    fizzBuzz(index)
+}
